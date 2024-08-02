@@ -1,0 +1,149 @@
+MySQL Shell 8.0.38
+
+Copyright (c) 2016, 2024, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+Type '\help' or '\?' for help; '\quit' to exit.
+ MySQL  JS > CREATE DATABASE carlib;
+SyntaxError: Unexpected identifier 'DATABASE'
+ MySQL  JS > CREATE DB carlib;
+SyntaxError: Unexpected identifier 'DB'
+ MySQL  JS > \sql
+Switching to SQL mode... Commands end with ;
+ MySQL  SQL > CREATE DATABASE carlib;
+ERROR: Not connected.
+ MySQL  SQL > USE carlib;
+ERROR: Not connected.
+Not connected.
+ MySQL  SQL > \connect root@localhost
+Creating a session to 'root@localhost'
+Please provide the password for 'root@localhost': **
+MySQL Error 1045: Access denied for user 'root'@'localhost' (using password: YES)
+ MySQL  SQL > \connect root@localhost
+Creating a session to 'root@localhost'
+Please provide the password for 'root@localhost': ****
+Save password for 'root@localhost'? [Y]es/[N]o/Ne[v]er (default No): Y
+Fetching global names for auto-completion... Press ^C to stop.
+Your MySQL connection id is 19 (X protocol)
+Server version: 8.0.38 MySQL Community Server - GPL
+No default schema selected; type \use <schema> to set one.
+ MySQL  localhost:33060+ ssl  SQL > CREATE DATABASE carlib;
+Query OK, 1 row affected (0.0095 sec)
+ MySQL  localhost:33060+ ssl  SQL > use carlib;
+Default schema set to `carlib`.
+Fetching global names, object names from `carlib` for auto-completion... Press ^C to stop.
+ MySQL  localhost:33060+ ssl  carlib  SQL > SOURCE C:\Users\alanh_ht4dif5\Apprentissage\OPENCLASSROOMS\CARLIB.sql
+Failed to open file 'C:\Users\alanh_ht4dif5\Apprentissage\OPENCLASSROOMS\CARLIB.sql', error: No such file or directory
+ MySQL  localhost:33060+ ssl  carlib  SQL > SOURCE C:\Users\alanh_ht4dif5\Apprentissage\OPENCLASSROOMS\CARLIB
+Failed to open file: 'C:\Users\alanh_ht4dif5\Apprentissage\OPENCLASSROOMS\CARLIB' is a directory
+ MySQL  localhost:33060+ ssl  carlib  SQL > SOURCE C:\Users\alanh_ht4dif5\Apprentissage\OPENCLASSROOMS\CARLIB\carlib.sql
+
+Query OK, 0 rows affected (0.0006 sec)
+Query OK, 0 rows affected (0.0003 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0028 sec)
+Query OK, 0 rows affected (0.0004 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected, 1 warning (0.0015 sec)
+Warning (code 3719): 'utf8' is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.
+Query OK, 0 rows affected (0.0004 sec)
+Query OK, 0 rows affected (0.0004 sec)
+Query OK, 0 rows affected (0.0011 sec)
+Query OK, 0 rows affected (0.0005 sec)
+Query OK, 0 rows affected (0.0005 sec)
+Query OK, 0 rows affected (0.0005 sec)
+Query OK, 0 rows affected (0.0004 sec)
+Query OK, 0 rows affected (0.0005 sec)
+Query OK, 0 rows affected (0.0005 sec)
+Query OK, 0 rows affected (0.0049 sec)
+Query OK, 0 rows affected (0.0008 sec)
+Query OK, 0 rows affected (0.0009 sec)
+Query OK, 0 rows affected (0.0221 sec)
+Query OK, 0 rows affected (0.0004 sec)
+Query OK, 0 rows affected (0.0001 sec)
+Query OK, 0 rows affected (0.0001 sec)
+Query OK, 0 rows affected (0.0001 sec)
+Query OK, 0 rows affected (0.0008 sec)
+Query OK, 0 rows affected (0.0014 sec)
+Query OK, 3 rows affected (0.0049 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+Query OK, 0 rows affected (0.0017 sec)
+Query OK, 0 rows affected (0.0005 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0001 sec)
+Query OK, 0 rows affected (0.0001 sec)
+Query OK, 0 rows affected (0.0013 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0150 sec)
+Query OK, 0 rows affected (0.0003 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0001 sec)
+Query OK, 0 rows affected (0.0001 sec)
+Query OK, 0 rows affected (0.0008 sec)
+Query OK, 0 rows affected (0.0011 sec)
+Query OK, 4 rows affected (0.0020 sec)
+
+Records: 4  Duplicates: 0  Warnings: 0
+Query OK, 0 rows affected (0.0017 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0001 sec)
+Query OK, 0 rows affected (0.0001 sec)
+Query OK, 0 rows affected (0.0001 sec)
+Query OK, 0 rows affected (0.0022 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0148 sec)
+Query OK, 0 rows affected (0.0003 sec)
+Query OK, 0 rows affected (0.0001 sec)
+Query OK, 0 rows affected (0.0001 sec)
+Query OK, 0 rows affected (0.0001 sec)
+Query OK, 0 rows affected (0.0008 sec)
+Query OK, 0 rows affected (0.0010 sec)
+Query OK, 5 rows affected (0.0018 sec)
+
+Records: 5  Duplicates: 0  Warnings: 0
+Query OK, 0 rows affected (0.0019 sec)
+Query OK, 0 rows affected (0.0003 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0013 sec)
+Query OK, 0 rows affected (0.0003 sec)
+Query OK, 0 rows affected (0.0004 sec)
+Query OK, 0 rows affected (0.0167 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0003 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0016 sec)
+Query OK, 0 rows affected (0.0025 sec)
+Query OK, 4 rows affected (0.0032 sec)
+
+Records: 4  Duplicates: 0  Warnings: 0
+Query OK, 0 rows affected (0.0015 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0003 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0005 sec)
+Query OK, 0 rows affected (0.0003 sec)
+Query OK, 0 rows affected (0.0003 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0002 sec)
+Query OK, 0 rows affected (0.0003 sec)
+Query OK, 0 rows affected (0.0003 sec)
+ MySQL  localhost:33060+ ssl  carlib  SQL > SHOW TABLES;
++-------------------+
+| Tables_in_carlib  |
++-------------------+
+| categorie         |
+| categorie_produit |
+| commentaire       |
+| produit           |
++-------------------+
+4 rows in set (0.0040 sec)
+ MySQL  localhost:33060+ ssl  carlib  SQL >
