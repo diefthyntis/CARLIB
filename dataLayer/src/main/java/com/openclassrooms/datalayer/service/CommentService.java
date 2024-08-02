@@ -18,6 +18,19 @@ public class CommentService {
 	public Optional<Comment> getCommentById(Integer id) {
 		return commentRepository.findById(id);
 	}
+
+	public void delete(int i) {
+		// TODO Auto-generated method stub
+		commentRepository.deleteById(i);
+	}
+
+	public Iterable<Comment> getComments() {
+		// TODO Auto-generated method stub
+		
+		return commentRepository.findAll();
+	}
+
+	
 	
 
 }

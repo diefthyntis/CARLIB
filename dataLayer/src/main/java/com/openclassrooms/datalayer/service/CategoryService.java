@@ -25,5 +25,11 @@ public class CategoryService {
 	public Category addCategory(Category category) {
 		return categoryRepository.save(category);		
 	}
+
+	public void delete(int i) {
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		categoryRepository.deleteById(i);
+	}
 	
 }

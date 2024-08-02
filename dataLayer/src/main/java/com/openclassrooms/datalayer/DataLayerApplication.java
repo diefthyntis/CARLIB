@@ -11,6 +11,9 @@ import com.openclassrooms.datalayer.model.Product;
 import com.openclassrooms.datalayer.service.CategoryService;
 import com.openclassrooms.datalayer.service.CommentService;
 import com.openclassrooms.datalayer.service.ProductService;
+
+import jakarta.transaction.Transactional;
+
 import com.openclassrooms.datalayer.model.Category;
 import com.openclassrooms.datalayer.model.Comment;
 
@@ -36,12 +39,13 @@ public class DataLayerApplication implements CommandLineRunner {
 	}
  
 	@Override
+	@Transactional
 	public void run(String... args) throws Exception {
 		
-		
+		/*
 		System.out.println("I - Produits==================");
 		Iterable<Product> products = productService.getProducts();
-		products.forEach(product -> System.out.println(product.getName()));
+		products.forEach(product -> System.out.println(product.getProductId() + " "+ product.getName() + " " + product.getCost()));
 		
 		System.out.println("");
 		
@@ -52,7 +56,8 @@ public class DataLayerApplication implements CommandLineRunner {
 		System.out.println("");
 		
 		System.out.println("III - Produit 1==================");
-		Optional<Product> optionalProduct = productService.getProductById(1);
+		Optional<Product> optionalProduct = productService.getProductById(20);
+		
 		Product thisProduct = optionalProduct.get();
 		System.out.println(thisProduct.getName());
 		
@@ -90,25 +95,97 @@ public class DataLayerApplication implements CommandLineRunner {
 		newCategory = categoryService.addCategory(newCategory);
 		categoryService.getCategorys().forEach(
 		category -> System.out.println(category.getCategoryId() + category.getName()));		
+		*/
 		
-		
- 
-		System.out.println("VIII - Ajout d'une nouveau produit Assurance foulage petit doigt");
+		/*
+		System.out.println("VIII - Ajout d'une nouveau produit Assurance foulage petit doigt 3");
 		Product newProduct = new Product();
-		newProduct.setName("Assurance foulage petit doigt 2");
+		newProduct.setName("Assurance foulage petit doigt 3");
 		newProduct.setCost(100);
 		newProduct.setDescription("En cas de surmenage dans les ministères");
 		
-		/* ajouter le produit à la catégorie afin de créer le lien avant l'appel de l'enregistrement en base */
-		newCategory.addProduct(newProduct);
 		
+		
+		newCategory.addProduct(newProduct);
 		newProduct = productService.addProduct(newProduct);
 		Iterable<Product> anyproducts = productService.getProducts();
 		anyproducts.forEach(product -> System.out.println(product.getName()));
+		*/
+		
+		/*
+		System.out.println("");
+		
+		System.out.println("IX - modification d'un produit");
+		Product existingProduct = productService.getProductById(1).get();
+		System.out.println("cout actuel " + existingProduct.getCost());
+		existingProduct.setCost(7000);
+		productService.addProduct(existingProduct);
+		Iterable<Product> allproducts = productService.getProducts();
+		allproducts.forEach(product -> System.out.println(product.getName()));
+		*/
+		
+		/*
+		System.out.println("");
+		System.out.println("IX - suppression du produit 22");
+		System.out.println("avant");
+		Iterable<Product> othersproducts = productService.getProducts();
+		othersproducts.forEach(product -> System.out.println(product.getProductId() + " "+ product.getName() + " " + product.getCost()));
+		productService.delete(22);
+		System.out.println("après");
+		othersproducts = productService.getProducts();
+		othersproducts.forEach(product -> System.out.println(product.getProductId() + " "+ product.getName() + " " + product.getCost()));
+		*/
+		
+		/*
+		System.out.println("");
+		System.out.println("X - suppression du commentaire 2");
+		System.out.println("avant");
+		Iterable<Comment> somecomments = commentService.getComments();
+		somecomments.forEach(comment -> System.out.println(comment.getCommentId() + comment.getContent()));
+		commentService.delete(2);
+		System.out.println("après");
+		Iterable<Comment> anycomments = commentService.getComments();
+		anycomments.forEach(comment -> System.out.println(comment.getCommentId() + comment.getContent()));
 		
 		
+		System.out.println("");
+		System.out.println("XI - suppression de la catégory 3");
+		System.out.println("====avant=====");
+		Iterable<Category> someCategorys = categoryService.getCategorys();
+		someCategorys.forEach(category -> System.out.println(category.getCategoryId() + category.getName()));
+		Iterable<Product> someProducts = productService.getProducts();
+		someProducts.forEach(product -> System.out.println(product.getProductId() + " "+ product.getName() + " " + product.getCost()));
+		categoryService.delete(3);
+		System.out.println("====après===");
+		Iterable<Category> anyCategorys = categoryService.getCategorys();
+		anyCategorys.forEach(category -> System.out.println(category.getCategoryId() + category.getName()));
+		someProducts = productService.getProducts();
+		someProducts.forEach(product -> System.out.println(product.getProductId() + " "+ product.getName() + " " + product.getCost()));
+		*/
 		
 		
+		/*
+		System.out.println("====avant=====");
+		Iterable<Product> someProducts = productService.getProducts();
+		
+		
+		someProducts.forEach(product -> System.out.println(product.getProductId() + " "+ product.getName() + " " + product.getCost()));
+		System.out.println("====après===");
+		Iterable<Product> searchResults = productService.getProductsByName("foulage");
+		searchResults.forEach(product -> System.out.println(product.getName()));	
+		
+		searchResults.forEach(product -> productService.delete(product.getProductId()));
+		
+		someProducts = productService.getProducts();
+		someProducts.forEach(product -> System.out.println(product.getProductId() + " "+ product.getName() + " " + product.getCost()));
+		*/
+	
+		
+		Iterable<Product> searchResults = productService.getProductsByName("Assurance débiles mentaux");
+		searchResults.forEach(product -> System.out.println(product.getProductId()));	
+		
+		searchResults = productService.getProductsByCategoryName("Standard");
+		searchResults.forEach(product -> System.out.println(product.getProductId()));	
 	
 	}
 	

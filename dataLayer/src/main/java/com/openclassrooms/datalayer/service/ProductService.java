@@ -25,6 +25,21 @@ public class ProductService {
 		// TODO Auto-generated method stub
 		return productRepository.save(newProduct);
 	}
+
+	public void delete(int i) {
+		// TODO Auto-generated method stub
+		productRepository.deleteById(i);
+	}
+
+	public Iterable<Product> getProductsByName(String name) {
+		// TODO Auto-generated method stub
+		return productRepository.findByName(name);
+	}
+	
+	public Iterable<Product> getProductsByCategoryName(String name) {
+		// TODO Auto-generated method stub
+		return productRepository.findByCategoriesName(name);
+	}
 	
 
 

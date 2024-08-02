@@ -38,7 +38,10 @@ public class Comment {
 		this.content = content;
 	}
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	/* avec CascadeType.PERSIST, si on supprime le commentaire, le produit ne sera pas supprimé
+	 * avec CascadeType.ALL, si on supprime le commentaire, le produit sera supprimé
+	 */
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="produit_id")
 	private Product product;
 

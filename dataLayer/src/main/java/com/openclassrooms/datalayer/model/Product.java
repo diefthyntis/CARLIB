@@ -3,6 +3,11 @@ package com.openclassrooms.datalayer.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.openclassrooms.datalayer.repository.ProductRepository;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,7 +23,11 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "produit")
+@DynamicUpdate
 public class Product {
+	
+	@Autowired
+	private ProductRepository productRepository;
  
 	public Product() {
 	    // Constructeur par défaut
@@ -47,7 +56,7 @@ public class Product {
 	}
 
 	public String getName() {
-		return name;
+		return "Product " + name;
 	}
 
 	public void setName(String name) {
@@ -100,7 +109,7 @@ public class Product {
 		this.comments = comments;
 	}
 	
-	@ManyToMany(mappedBy = "products",cascade = CascadeType.ALL)
+	@ManyToMany(mappedBy = "products",cascade = CascadeType.PERSIST)
 	private List<Category> categories = new ArrayList<>();
 
 	public List<Category> getCategories() {
@@ -120,6 +129,10 @@ public class Product {
 	public void removeComment(Comment comment) {
 		comments.remove(comment);
 		comment.setProduct(null);
+	}
+	
+	public Iterable<Product> getProductsByName(String name) {
+		return productRepository.findByName(name);
 	}
 
 	

@@ -32,7 +32,7 @@ public class Category {
 	@ManyToMany(
 			fetch = FetchType.EAGER,
 			cascade = { 
-					CascadeType.PERSIST, 
+					CascadeType.ALL, 
 					CascadeType.MERGE 
 					}	
 			)
@@ -52,7 +52,7 @@ public class Category {
 	}
 
 	public String getName() {
-		return name;
+		return "Categorie " + name;
 	}
 
 	public void setName(String name) {
